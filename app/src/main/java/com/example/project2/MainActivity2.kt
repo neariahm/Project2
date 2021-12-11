@@ -20,11 +20,14 @@ class MainActivity2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
+        //Get count-1 from viewmodel to go to previous dog image
        viewModel.getAllImagesList().observe(this){
     val count = it.size
             val imageView = findViewById<ImageView>(R.id.imageView8)
            //imageUrl is from ImageEntity, look at Amani's code for the it.get(0)
             Picasso.with(this).load(it[count-1].imageUrl).into(imageView)
+
+           //finish takes us back to home screen
             val button: ImageView = findViewById(R.id.imageView10)
             button.setOnClickListener {
                 finish()

@@ -19,13 +19,14 @@ class DogViewModel(private val imageDao: ImageDao) : ViewModel() {
     fun insertNewImage() {
         viewModelScope.launch {
            _dogPhoto.value = DogAPI.retrofitService.getDogPhotos()
+
         }
         }
 
      // 12/7 added a function
     fun addDog(imageEntity: ImageEntity){
         viewModelScope.launch{
-            imageDao.getNewImage(imageEntity)
+            imageDao.insertImage(imageEntity)
         }
     }
             fun getAllImagesList(): LiveData<List<ImageEntity>> {

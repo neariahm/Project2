@@ -21,28 +21,17 @@ class MainActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
-           /* val randomPhotoButton: TextView = findViewById(R.id.textView2)
-
-            randomPhotoButton.setOnClickListener {
-                val currentImage = viewModel.dogPhoto.value!!.imageUrl
-                val previousImage = currentImage?.let {
-                        dogImage -> ImageEntity(imageUrl = dogImage) }
-                viewModel.getNewPhoto()
-                if(previousImage != null){
-                    viewModel.insertNewImage(previousImage)
-                }
-                viewModel.deleteLastImage()
-            } */
-         // Domoniques code
+         // Add randomDog button and previousDog button
           val randomDog: TextView = findViewById(R.id.textView2)
             val previousDog :TextView = findViewById(R.id.textView)
 
+            //Displays picture of a dog from API in imageView
             viewModel.dogPhoto.observe(this, {
                 val mainImage : ImageView = findViewById(R.id.imageView)
                 Picasso.with(this).load(it.message).into(mainImage)
             })
 
-
+// textView2 should display the next random dog image
             randomDog.setOnClickListener {
                 val currentImgUrl = viewModel.dogPhoto.value?.message
                 viewModel.insertNewImage()
@@ -52,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                     viewModel.addDog(newDogImage)
                 }
             }
+            //textView opens the MainActivity2 class
             previousDog.setOnClickListener {
                 val intent = Intent(this, MainActivity2::class.java)
                 startActivity(intent)

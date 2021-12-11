@@ -35,5 +35,5 @@ import kotlinx.coroutines.flow.Flow
         //Finally, we will create a query that will receive the last image in the database.
         //12/7: put imageEntity in the parentheses
     @Query("SELECT * FROM images ORDER BY id DESC LIMIT 1")
- suspend   fun getNewImage(imageEntity: ImageEntity)
+ suspend   fun getNewImage(): ImageEntity
 }
