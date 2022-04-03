@@ -1,5 +1,6 @@
 package com.example.project2.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.project2.database.ImageDao
 import com.example.project2.database.ImageEntity
@@ -7,6 +8,7 @@ import com.example.project2.database.DogPhoto
 import com.example.project2.network.DogAPI
 import kotlinx.coroutines.launch
 
+// data for the views (ui)
 class DogViewModel(private val imageDao: ImageDao) : ViewModel() {
 
     // added 12/7: LiveData list, init
@@ -26,6 +28,7 @@ class DogViewModel(private val imageDao: ImageDao) : ViewModel() {
      // 12/7 added a function
     fun addDog(imageEntity: ImageEntity){
         viewModelScope.launch{
+
             imageDao.insertImage(imageEntity)
         }
     }

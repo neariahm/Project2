@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
             val previousDog :TextView = findViewById(R.id.textView)
 
             //Displays picture of a dog from API in imageView
-            viewModel.dogPhoto.observe(this, {
-                val mainImage : ImageView = findViewById(R.id.imageView)
+            viewModel.dogPhoto.observe(this) {
+                val mainImage: ImageView = findViewById(R.id.imageView)
                 Picasso.with(this).load(it.message).into(mainImage)
-            })
+            }
 
 // textView2 should display the next random dog image
             randomDog.setOnClickListener {

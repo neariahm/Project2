@@ -3,7 +3,8 @@ package com.example.project2.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-// this one doesnt work for some reason: import java.util.concurrent.Flow
+// this one doesnt work for some reason: import java.util.concurrent.Flow I think its because
+// I changed the kotlin classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin version
 import kotlinx.coroutines.flow.Flow
 
 

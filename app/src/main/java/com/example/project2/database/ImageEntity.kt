@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
 data class ImageEntity (
     // autoGenerate = true means increment the number automatically for the key, starting at 0
     @PrimaryKey(autoGenerate = true)
-    // Always need a column for an unique Id, doesn't always have to be a number though
+    // Always need a column for an unique Id so has to be nonnull, doesn't always have to be a number though
     @NonNull @ColumnInfo(name = "id") val id: Int = 0,
 
     @ColumnInfo(name = "image") val imageUrl: String,
