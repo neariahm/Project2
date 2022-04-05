@@ -38,12 +38,18 @@ The completed app should:
 
 ## Extra Challenges
 
-* 
+* Instead of saving only the previous dog image, save a complete history of all the dog image URLs that were retrieved from the dog-image web service in a Room database.Over time, your Room DB will have a long history of dog images (url strings).  Alternatively, you could save “favorite” dog images, but we’ll leave that up to you.
+* Allow the user to see their current dog image history with a “History…” button on the main screen.  This button should display a secondary Activity (or Fragment) that shows the history list using a RecyclerView.  Of course the user should have the ability to return back to the main screen.  Every time the second Activity (or Fragment) is shown, you would select all the images in your database and display them in the RecyclerView.
+* Since the history list is stored in a database, confirm the history data survives the life of the app.  
+Shutdown the app and then restart it.  Your history list should still be there after you restart the app, if your storage code is correct.
+* Build on the Challenge above and add a Button click-handler (actually 1 per list item)  to the RecyclerView in the “History” Activity/Fragment.  Using this click-handler, allow the user to click on any image URL to retrieve that specific image.  Display that image in the main screen as the current image.
+
 
 
 ## Helpful Resources
-* Android Basics Pathway: [Get and display data from the internet](https://developer.android.com/courses/pathways/android-basics-kotlin-unit-4-pathway-2)
-
+* Android Basics Pathway:
+    *  [Introduction to SQL, Room, and Flow](https://developer.android.com/courses/pathways/android-basics-kotlin-unit-5-pathway-1)
+    * [Use Room for Data Persistence](https://developer.android.com/courses/pathways/android-basics-kotlin-unit-5-pathway-2)
 
 
 
